@@ -22,9 +22,10 @@
                 android:id="@+id/textView"
                 android:gravity="center" />
 
-            <EditText android:layout_height="wrap_content" android:id="@+id/txtUsername"
+            <EditText android:layout_height="wrap_content" android:id="@+id/txtUsername2"
                 android:layout_width="match_parent"
-                android:layout_weight="1"></EditText>
+                android:layout_weight="1"
+                android:inputType="text"></EditText>
         </LinearLayout>
 
         <LinearLayout
@@ -41,7 +42,7 @@
                 android:gravity="center" />
 
             <EditText android:layout_height="wrap_content"
-                android:inputType="textPassword" android:id="@+id/txtPassword"
+                android:inputType="textPassword" android:id="@+id/txtPassword2"
                 android:layout_width="match_parent"
                 android:layout_weight="1"></EditText>
         </LinearLayout>
