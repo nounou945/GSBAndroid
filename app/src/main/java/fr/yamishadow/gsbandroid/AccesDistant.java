@@ -11,13 +11,21 @@ import org.json.JSONObject;
  * Created by chett on 04/03/2017.
  */
 
+
 public class AccesDistant implements AsyncResponse {
-    final String SERVERADDR="http://192.168.0.21/gsbandroid/serveurgsb.php/";
+   // final String SERVERADDR="http://192.168.0.21/gsbandroid/serveurgsb.php/";
+   // final String SERVERADDR="http://192.168.43.219/gsbandroid/serveurgsb.php/";
+    final String SERVERADDR="http://138.231.160.7:83/nchettoui/gsbandroid/serveurgsb.php";
     private MainActivity mainActivity;
     public AccesDistant(MainActivity main) {
     this.mainActivity=main;
     }
 
+
+    /**
+     * reponse du serveur par output
+     * @param output
+     */
     @Override
     public void processFinish(String output) {
         Log.d("serveur","********"+output);
@@ -50,6 +58,12 @@ public class AccesDistant implements AsyncResponse {
 
 
     }
+
+    /**
+     * envoi l'intitule de l'operation des données
+     * @param operation
+     * @param lesDonneesJSON
+     */
     public void envoi(String operation, JSONArray lesDonneesJSON){
         AccesHTTP accesDonnees= new AccesHTTP();
         accesDonnees.delegate = this; // le lien de délégation entre AccesDistant et AccesHTTP

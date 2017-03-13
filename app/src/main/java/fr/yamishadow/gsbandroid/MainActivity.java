@@ -156,6 +156,10 @@ public class MainActivity extends AppCompatActivity {
 
          }
      }
+
+    /**
+     * permet l'envoi des frais hf
+     */
     public void envoiFraisHf(){
         Set lesClefs= Global.listFraisMois.keySet(); // recup les clefs
         for(Object uneclef:lesClefs){

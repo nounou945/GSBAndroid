@@ -18,14 +18,27 @@ public class FraisHf  implements Serializable {
 		this.jour = jour ;
 	}
 
+
+	/**
+	 * getter du montant des frais hf
+	 * @return
+     */
 	public Integer getMontant() {
 		return montant;
 	}
 
+	/**
+	 * getter du motif du frais hf
+	 * @return
+     */
 	public String getMotif() {
 		return motif;
 	}
 
+	/**
+	 * getter sur le jour du frais hf
+	 * @return
+     */
 	public Integer getJour() {
 		return jour;
 	}

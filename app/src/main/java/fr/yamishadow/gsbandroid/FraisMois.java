@@ -43,55 +43,107 @@ public class FraisMois implements Serializable {
 	public void supprFraisHf(Integer index) {
 		lesFraisHf.remove(index) ;
 	}
-	
+
+	/**
+	 * getter mois du fraismois
+	 * @return
+     */
 	public Integer getMois() {
 		return mois;
 	}
 
+	/**
+	 * setter sur le mois
+	 * @param mois
+     */
 	public void setMois(Integer mois) {
 		this.mois = mois;
 	}
 
+	/**
+	 * getter sur l'annee
+	 * @return
+     */
 	public Integer getAnnee() {
 		return annee;
 	}
 
+	/**
+	 * setter sur l'annee
+	 * @param annee
+     */
 	public void setAnnee(Integer annee) {
 		this.annee = annee;
 	}
 
+	/**
+	 * getter sur l'etape
+	 * @return
+     */
 	public Integer getEtape() {
 		return etape;
 	}
 
+	/**
+	 * setter sur l'etape
+	 * @param etape
+     */
 	public void setEtape(Integer etape) {
 		this.etape = etape;
 	}
 
+	/**
+	 * getter sur le km
+	 * @return
+     */
 	public Integer getKm() {
 		return km;
 	}
 
+	/**
+	 * setter sur le km
+	 * @param km
+     */
 	public void setKm(Integer km) {
 		this.km = km;
 	}
 
+	/**
+	 * getter sur la nuitee
+	 * @return
+     */
 	public Integer getNuitee() {
 		return nuitee;
 	}
 
+	/**
+	 * setter sur la nuitee
+	 * @param nuitee
+     */
 	public void setNuitee(Integer nuitee) {
 		this.nuitee = nuitee;
 	}
 
+	/**
+	 * getter sur le repas
+	 * @return
+     */
 	public Integer getRepas() {
 		return repas;
 	}
 
+	/**
+	 * setter sur le repas
+	 * @param repas
+     */
 	public void setRepas(Integer repas) {
 		this.repas = repas;
-	}	
-	
+	}
+
+	/**
+	 * getter sur les fraishf
+	 * @return
+     */
 	public ArrayList<FraisHf> getLesFraisHf() {
 		return lesFraisHf ;
 	}
