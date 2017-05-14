@@ -86,7 +86,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="right|center_vertical"
-                    android:inputType="number">
+                    android:inputType="number"
+                    android:focusable="false">
 
                     <requestFocus />
                 </EditText>

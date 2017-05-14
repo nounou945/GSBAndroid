@@ -46,8 +46,10 @@ public class RepasActivity extends AppCompatActivity {
      * Valorisation des propriétés avec les informations affichées
      */
     private void valoriseProprietes() {
-        //annee = ((DatePicker)findViewById(R.id.datKm)).getYear() ;
-        //mois = ((DatePicker)findViewById(R.id.datKm)).getMonth() + 1 ;
+        if((DatePicker)findViewById(R.id.datKm)!=null){
+            annee = ((DatePicker) findViewById(R.id.datKm)).getYear();
+            mois = ((DatePicker) findViewById(R.id.datKm)).getMonth() + 1;
+        }
         // récupération de la qte correspondant au mois actuel
         repas = 0 ;
         int key = annee*100+mois ;
@@ -130,7 +132,11 @@ public class RepasActivity extends AppCompatActivity {
             Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
         }
         Global.listFraisMois.get(key).setRepas(repas);
-        Log.d("repas:","*****************"+Global.listFraisMois.get(key).getRepas());
+        Global.listFraisMois.get(key).setAnnee(annee);
+        Global.listFraisMois.get(key).setMois(mois);
+        if(Global.listFraisMois.get(key)!=null) {
+            Log.d("repas:", "*****************" + Global.listFraisMois.get(key).getRepas());
+        }
     }
 
     /**

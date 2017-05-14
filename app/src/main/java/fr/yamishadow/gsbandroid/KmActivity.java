@@ -47,8 +47,10 @@ public class KmActivity extends AppCompatActivity {
 	 * Valorisation des propriétés avec les informations affichées
 	 */
 	private void valoriseProprietes() {
-		//annee = ((DatePicker)findViewById(R.id.datKm)).getYear() ;
-		//mois = ((DatePicker)findViewById(R.id.datKm)).getMonth() + 1 ;
+		if((DatePicker)findViewById(R.id.datKm)!=null){
+			annee = ((DatePicker) findViewById(R.id.datKm)).getYear();
+			mois = ((DatePicker) findViewById(R.id.datKm)).getMonth() + 1;
+		}
 		// récupération de la qte correspondant au mois actuel
 		qte = 0 ;
 		int key = annee*100+mois ;
@@ -76,6 +78,7 @@ public class KmActivity extends AppCompatActivity {
     	((Button)findViewById(R.id.cmdKmValider)).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
     			Serializer.serialize(Global.filename, Global.listFraisMois, KmActivity.this) ;
+
     			retourActivityPrincipale() ;    		
     		}
     	}) ;    	
@@ -131,8 +134,12 @@ public class KmActivity extends AppCompatActivity {
 			Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
 		}
 		Global.listFraisMois.get(key).setKm(qte) ;
+
+		if(Global.listFraisMois.get(key)!=null){
 		Log.d("KM:","*****************"+Global.listFraisMois.get(key).getKm());
-	}
+			Log.d("DATEKM:","*****************"+mois);
+			Log.d("DATEKM2:","*****************"+annee);
+	}}
 
 	/**
 	 * Retour à l'activité principale (le menu)

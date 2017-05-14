@@ -115,7 +115,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="top|left"
-                android:lines="3" />
+                android:lines="3"
+                android:hint="Libellé" />
 
         </LinearLayout>
 

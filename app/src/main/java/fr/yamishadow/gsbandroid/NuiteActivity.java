@@ -43,8 +43,10 @@ public class NuiteActivity extends AppCompatActivity {
      * Valorisation des propriétés avec les informations affichées
      */
     private void valoriseProprietes() {
-        //annee = ((DatePicker)findViewById(R.id.datKm)).getYear() ;
-        //mois = ((DatePicker)findViewById(R.id.datKm)).getMonth() + 1 ;
+        if((DatePicker)findViewById(R.id.datKm)!=null){
+            annee = ((DatePicker) findViewById(R.id.datKm)).getYear();
+            mois = ((DatePicker) findViewById(R.id.datKm)).getMonth() + 1;
+        }
         // récupération de la qte correspondant au mois actuel
         nuitee = 0 ;
         int key = annee*100+mois ;
@@ -127,7 +129,11 @@ public class NuiteActivity extends AppCompatActivity {
             Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
         }
         Global.listFraisMois.get(key).setNuitee(nuitee);
-        Log.d("Nuite:","*****************"+Global.listFraisMois.get(key).getNuitee());
+
+        if(Global.listFraisMois.get(key)!=null){
+            Log.d("Nuite:","*****************"+Global.listFraisMois.get(key).getNuitee());
+        }
+
     }
 
     /**

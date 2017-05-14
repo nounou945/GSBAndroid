@@ -42,7 +42,7 @@ public abstract class Global {
 					}
 				});
 
-				if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP){
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
 					int daySpinnerId = Resources.getSystem().getIdentifier("day", "id", "android");
 					if (daySpinnerId != 0)
 					{

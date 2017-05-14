@@ -137,20 +137,25 @@ public class MainActivity extends AppCompatActivity {
     public static void setVisiteur(Visiteur visiteur) {
         MainActivity.visiteur = visiteur;
     }
-     public void envoiFrais(){
+
+    /**
+     * envoie les frais forfaitaires dans la bdd
+     */
+    public void envoiFrais(){
          Set lesClefs= Global.listFraisMois.keySet(); // recup les clefs
          for(Object uneclef:lesClefs){
 
            FraisMois lesFrais= Global.listFraisMois.get((int)uneclef);
 
            ArrayList liste=new ArrayList();
-            liste.add(visiteur.getId());
+             liste.add(visiteur.getId());
              liste.add(lesFrais.getAnnee());
              liste.add(lesFrais.getMois());
              liste.add(lesFrais.getNuitee());
              liste.add(lesFrais.getEtape());
              liste.add(lesFrais.getKm());
              liste.add(lesFrais.getRepas());
+             Log.d("fraismois","*******************"+liste);
              accesdistant.envoi("fraismois",new JSONArray(liste));
 
 
@@ -158,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
      }
 
     /**
-     * permet l'envoi des frais hf
+     * permet l'envoi des frais hf à la bdd
      */
     public void envoiFraisHf(){
         Set lesClefs= Global.listFraisMois.keySet(); // recup les clefs
@@ -178,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 listehf.add(unFraishf.getJour());
                 listehf.add(unFraishf.getMontant());
                 listehf.add(unFraishf.getMotif());
+                Log.d("fraismois","*******************"+listehf);
                 accesdistant.envoi("fraishf",new JSONArray(listehf));
 
 
@@ -186,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+        Global.listFraisMois.clear();
+        Serializer.serialize(Global.filename,Global.listFraisMois,MainActivity.this);
+
     }
 
 }
